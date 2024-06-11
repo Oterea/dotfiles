@@ -3,6 +3,5 @@ if status is-interactive
 end
 
 
-if status --is-login
-    set -gx PATH /opt/homebrew/bin $PATH
-end
+set -gx PATH /opt/homebrew/bin $PATH
+
