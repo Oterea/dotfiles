@@ -9,6 +9,7 @@ add_newline = false
 
 
 [cmd_duration]
+min_time = 500
 format = '[ took $duration](bold yellow)'
 
 [sudo]
@@ -98,7 +99,7 @@ format = '[$symbol$branch(@$remote_name/$remote_branch)]($style)'
 # ~/.config/starship.toml
 
 [git_status]
-disabled = true
+disabled = false
 conflicted = 'conflicted'
 ahead = 'ahead'
 behind = '😰'
@@ -110,6 +111,7 @@ modified = 'modified'
 staged = '[++\($count\)](green)'
 renamed = '👅'
 deleted = '🗑'
+format = '([\[$all_status$ahead_behind\]]($style) )'
 
 
 [golang]
