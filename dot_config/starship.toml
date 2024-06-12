@@ -1,0 +1,248 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+
+format = '''$fill
+$time [$username 🍀 Hello! Have a nice day!!!](#3498DB) $all$shell $directory $character'''
+
+add_newline = false
+
+
+
+[cmd_duration]
+format = '[ took $duration](bold yellow)'
+
+[sudo]
+disabled = false
+style = '#E74C3C'
+symbol = 'sudo'
+format = '[$symbol]($style)'
+
+
+
+[fill]
+symbol = '——'
+# symbol = '-'
+style = '#797D7F'
+
+[username]
+disabled = false
+show_always = true
+style_user = '#52BE80'
+style_root = '#E74C3C'
+format = '[$user]($style)'
+
+# ~/.config/starship.toml
+
+[directory]
+read_only = " 󰌾"
+
+[character]
+success_symbol = '[➜](#76D7C4)'
+error_symbol = '[ ](#BF616A)'
+
+
+[shell]
+disabled = false
+fish_indicator = '󰈺 '
+unknown_indicator = 'mystery shell'
+style = '#F39C12'
+format = '[$indicator]($style)'
+
+# ~/.config/starship.toml
+[time]
+disabled = false
+time_format = '%R'
+style = '#BB8FCE'
+format = '[\[ $time \]]($style)'
+
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+always_show_remote = true
+format = '[$symbol$branch(@$remote_name/$remote_branch)]($style)'
+
+# ~/.config/starship.toml
+
+[git_status]
+disabled = true
+conflicted = 'conflicted'
+ahead = 'ahead'
+behind = '😰'
+diverged = '😵'
+up_to_date = '✓'
+untracked = 'untracked'
+stashed = '📦'
+modified = 'modified'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+disabled = true
+threshold = -1
+symbol = "󰍛 "
+style = 'bold dimmed green'
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os]
+disabled = true
+format = "[$symbol]($style)"
+style = "#EBEDEF"
+
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
