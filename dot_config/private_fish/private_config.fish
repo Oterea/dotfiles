@@ -6,5 +6,5 @@ function chezmoiin
 end
 
 
-set -x PATH /opt/homebrew/bin $PATH
+set -x PATH /opt/homebrew/bin /usr/local/bin $PATH
 
