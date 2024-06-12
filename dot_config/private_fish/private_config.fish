@@ -7,5 +7,4 @@ end
 
 
 set -x PATH /opt/homebrew/bin $PATH
-set -x EDITOR /opt/homebrew/bin/zed
 
