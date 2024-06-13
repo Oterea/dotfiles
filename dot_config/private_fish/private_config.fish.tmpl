@@ -1,0 +1,19 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+# ==========================================================
+# machine-specific configuration
+{{- if eq .chezmoi.hostname "amax" }}
+set -x PATH /home/linuxbrew/.linuxbrew/bin $PATH
+{{- end }}
+# ==========================================================
+{{- if eq .chezmoi.hostname "Otereas-Mac-mini" }}
+# zed
+set -x EDITOR "/usr/local/bin/zed --wait"
+# homebrew
+set -x PATH /opt/homebrew/bin /usr/local/bin $PATH
+{{- end }}
+# ==========================================================
+
+# starship
+starship init fish | source
