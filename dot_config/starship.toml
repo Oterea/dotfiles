@@ -137,7 +137,7 @@ symbol = " "
 # ssh_only = false
 disabled = false
 ssh_symbol = " "
-format = '[$ssh_symbol](#52BE80) [$hostname](#52BE80) '
+format = '[$ssh_symbol](#52BE80)[$hostname](#52BE80)'
 
 
 
