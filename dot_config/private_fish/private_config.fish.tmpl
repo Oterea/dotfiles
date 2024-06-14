@@ -42,9 +42,11 @@ function gss
     git status $argv
 end
 function glg
-    git status $argv
+    git log $argv
 end
-
+function gamp
+    git add . && git commit -m $argv && git push
+end
 # <<<<==chezmoi==>>>>
 function ch
     chezmoi $argv
