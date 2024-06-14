@@ -73,5 +73,5 @@ blink_timeout = 0 # 不会停止闪烁
 # =========================================================================
 [keyboard]
 bindings = [
-# { key = "ArrowRight", mods = "Command", chars = "\x05" }
+    { key = "[", mods = "Command" ,action = "WordLeft", mode="Vi"}
 ]

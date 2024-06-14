@@ -3,24 +3,64 @@ if status is-interactive
 end
 # =====================machine-specific=====================
 {{- if eq .flag "ubuntuamax" }}
-# ------ubuntu-amax------
+# <<<<==ubuntu-amax==>>>>
 set -x PATH /home/linuxbrew/.linuxbrew/bin $PATH
 
 {{- else if eq .flag "macmini" }}
-# ------mac-mini------
+# <<<<==mac-mini==>>>>
 # zed
 set -x EDITOR "/usr/local/bin/zed --wait"
 # homebrew
 set -x PATH /opt/homebrew/bin /usr/local/bin $PATH
 
 {{- else if eq .flag "macair" }}
-# ------mac-air------
+# <<<<==mac-air==>>>>
 # zed
 set -x EDITOR "/usr/local/bin/zed --wait"
 # homebrew
 set -x PATH /usr/local/bin $PATH
 {{- end }}
 # =====================machine-specific=====================
+# <<<<==machina==>>>>
+function h
+    cd ~
+end
+# <<<<==git==>>>>
+function gad
+    git add $argv
+end
+function gmt
+    git commit $argv
+end
+function gph
+    git push $argv
+end
+function gfh
+    git fetch $argv
+end
+function gss
+    git status $argv
+end
+function glg
+    git status $argv
+end
+
+# <<<<==chezmoi==>>>>
+function ch
+    chezmoi $argv
+end
+function chad
+    chezmoi add $argv
+end
+function chap
+    chezmoi apply
+end
+function ched
+    chezmoi edit $argv
+end
+function chcd
+    chezmoi cd
+end
 
 # starship
 starship init fish | source
