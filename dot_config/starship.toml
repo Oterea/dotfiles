@@ -20,6 +20,12 @@ format = '[$symbol]($style)'
 
 
 
+[localip]
+ssh_only = false
+format = '[@$localipv4](#52BE80) '
+disabled = false
+
+
 [fill]
 symbol = '——'
 # symbol = '-'
@@ -32,7 +38,6 @@ style_user = '#52BE80'
 style_root = '#E74C3C'
 format = '[$user]($style)'
 
-# ~/.config/starship.toml
 
 [directory]
 read_only = " 󰌾"
@@ -49,7 +54,7 @@ unknown_indicator = 'mystery shell'
 style = '#F39C12'
 format = '[$indicator]($style)'
 
-# ~/.config/starship.toml
+
 [time]
 disabled = false
 time_format = '%R'
@@ -96,7 +101,6 @@ symbol = " "
 always_show_remote = true
 format = '[$symbol$branch(@$remote_name/$remote_branch)]($style)'
 
-# ~/.config/starship.toml
 
 [git_status]
 disabled = false
@@ -130,7 +134,12 @@ symbol = " "
 symbol = " "
 
 [hostname]
+# ssh_only = false
+disabled = false
 ssh_symbol = " "
+format = '[$ssh_symbol](#52BE80) [$hostname](#52BE80) '
+
+
 
 [java]
 symbol = " "
