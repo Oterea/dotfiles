@@ -21,7 +21,7 @@ format = '[$symbol]($style)'
 
 
 [localip]
-ssh_only = false
+# ssh_only = false
 format = '[@$localipv4](#52BE80) '
 disabled = false
 
