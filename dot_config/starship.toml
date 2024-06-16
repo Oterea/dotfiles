@@ -2,7 +2,7 @@
 
 
 format = '''$fill
-$time [$username 🍀 Hello! Have a nice day!!!](#3498DB) $all$shell $directory $character'''
+$time [$username 🍀 Hello! Have a nice day!!!](#BB8FCE) $all$shell $directory $character'''
 
 add_newline = false
 
@@ -34,7 +34,7 @@ style = '#797D7F'
 [username]
 disabled = false
 show_always = true
-style_user = '#52BE80'
+style_user = '#BB8FCE'
 style_root = '#E74C3C'
 format = '[$user]($style)'
 
