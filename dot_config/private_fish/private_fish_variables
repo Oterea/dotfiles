@@ -5,9 +5,9 @@ SETUVAR fish_color_autosuggestion:767676
 SETUVAR fish_color_cancel:\x2d\x2dreverse
 SETUVAR fish_color_command:d787af
 SETUVAR fish_color_comment:4c566a\x1e\x2d\x2ditalics
-SETUVAR fish_color_cwd:5e81ac
+SETUVAR fish_color_cwd:EC7063
 SETUVAR fish_color_cwd_root:bf616a
-SETUVAR fish_color_end:00afff
+SETUVAR fish_color_end:EC7063
 SETUVAR fish_color_error:bf616a
 SETUVAR fish_color_escape:ebcb8b
 SETUVAR fish_color_history_current:e5e9f0\x1e\x2d\x2dbold
@@ -18,7 +18,7 @@ SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_operator:81a1c1
 SETUVAR fish_color_option:\x1d
-SETUVAR fish_color_param:d75fd7
+SETUVAR fish_color_param:BB8FCE
 SETUVAR fish_color_quote:00af87
 SETUVAR fish_color_redirection:d7afaf\x1e\x2d\x2dbold
 SETUVAR fish_color_search_match:\x2d\x2dbold\x1e\x2d\x2dbackground\x3d434c5e

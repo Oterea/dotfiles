@@ -41,9 +41,10 @@ format = '[$user]($style)'
 
 [directory]
 read_only = " 󰌾"
+style = "#BB8FCE"
 
 [character]
-success_symbol = '[➜](#76D7C4)'
+success_symbol = '[➜](#d787af)'
 error_symbol = '[ ](#BF616A)'
 
 
