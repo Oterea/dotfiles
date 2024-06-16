@@ -105,18 +105,19 @@ format = '[$symbol$branch(@$remote_name/$remote_branch)]($style)'
 
 [git_status]
 disabled = false
-conflicted = 'conflicted'
-ahead = 'ahead'
-behind = '😰'
-diverged = '😵'
+ahead = '↑'
+behind = '↓'
+diverged = '⇕'
 up_to_date = '✓'
-untracked = 'untracked'
-stashed = '📦'
-modified = 'modified'
-staged = '[++\($count\)](green)'
-renamed = '👅'
-deleted = '🗑'
-format = '([\[$all_status$ahead_behind\]]($style) )'
+
+conflicted = '=><='
+untracked = '✗'
+stashed = '$'
+modified = '⍻'
+staged = '[+\($count\)](green)'
+renamed = '»'
+deleted = 'deleted'
+format = '([\[files:$all_status  repo:$ahead_behind\]]($style) )'
 
 
 [golang]
