@@ -117,7 +117,7 @@ modified = '⍻'
 staged = '[+\($count\)](green)'
 renamed = '»'
 deleted = 'deleted'
-format = '([\[(files:$all_status)  repo:$ahead_behind\]]($style) )'
+format = '([\[(files:$all_status  )repo:$ahead_behind\]]($style) )'
 
 
 [golang]
