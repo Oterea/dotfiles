@@ -98,14 +98,12 @@ function proxy
     # Set proxy
     set -gx http_proxy "http://$proxy_server:$proxy_port"
     set -gx https_proxy "http://$proxy_server:$proxy_port"
-    set -gx socks_proxy "socks5://$proxy_server:$proxy_port"
     set -gx all_proxy "socks5://$proxy_server:$proxy_port"
 
     # Set environment variables for applications that may use these variables
-    set -gx HTTP_PROXY $http_proxy
-    set -gx HTTPS_PROXY $https_proxy
-    set -gx SOCKS_PROXY $socks_proxy
-    set -gx ALL_PROXY $all_proxy
+    # set -gx HTTP_PROXY $http_proxy
+    # set -gx HTTPS_PROXY $https_proxy
+    # set -gx ALL_PROXY $all_proxy
 
     echo "Proxies set"
     curl "ipinfo.io"
