@@ -6,7 +6,7 @@ end
 # <<<<++++++ubuntu-amax++++++>>>>
 set -x PATH /home/linuxbrew/.linuxbrew/bin $PATH
 # <<<<==ipinfo==>>>>
-function ip
+function ipinfo
     # 使用 ip 命令获取本机的IP地址，排除回环地址
     set -l ip (ip addr show | grep -w inet | grep -v 127.0.0.1 | awk '{print $2}' | cut -d/ -f1)
     echo "Your IP address is: $ip"
@@ -19,7 +19,7 @@ set -x EDITOR "/usr/local/bin/zed --wait"
 # homebrew
 set -x PATH /opt/homebrew/bin /usr/local/bin $PATH
 # <<<<==ipinfo==>>>>
-function ip
+function ipinfo
     # 获取本机的IP地址，排除回环地址
     set -l ip (ifconfig | grep -w inet | grep -v 127.0.0.1 | awk '{print $2}')
     echo "Your IP address is: $ip"
@@ -31,7 +31,7 @@ set -x EDITOR "/usr/local/bin/zed --wait"
 # homebrew
 set -x PATH /usr/local/bin $PATH
 # <<<<==ipinfo==>>>>
-function ip
+function ipinfo
     # 获取本机的IP地址，排除回环地址
     set -l ip (ifconfig | grep -w inet | grep -v 127.0.0.1 | awk '{print $2}')
     echo "Your IP address is: $ip"
