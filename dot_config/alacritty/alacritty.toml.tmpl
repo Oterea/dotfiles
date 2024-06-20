@@ -1,8 +1,18 @@
 live_config_reload = true
 # =========================================================================
+
 [shell]
-program = "/opt/homebrew/bin/fish"
+# =====================machine-specific====================================
+{{- if eq .flag "macair" }}
+# <<<<==mac-air==>>>>
+program = "/usr/local/bin/fish"
 # args = ["-l"]
+{{- else if eq .flag "macmini" }}
+# <<<<==mac-mini==>>>>
+program = "/opt/homebrew/bin/fish"
+{{- end }}
+# =====================machine-specific====================================
+
 # =========================================================================
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
@@ -104,5 +114,5 @@ blink_timeout = 0 # 不会停止闪烁
 # =========================================================================
 [keyboard]
 bindings = [
-    { key = "[", mods = "Command" ,action = "Left", mode="Vi"}
+  #  { key = "[", mods = "Command" ,action = "Left", mode="Vi"}
 ]
