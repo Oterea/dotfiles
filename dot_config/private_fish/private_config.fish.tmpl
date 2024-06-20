@@ -96,16 +96,16 @@ function proxy
     end
     echo "proxy server: $proxy_server"
     # Set proxy
-    set -x http_proxy "http://$proxy_server:$proxy_port"
-    set -x https_proxy "https://$proxy_server:$proxy_port"
-    set -x socks_proxy "socks5://$proxy_server:$proxy_port"
-    set -x all_proxy "socks5://$proxy_server:$proxy_port"
+    set -gx http_proxy "http://$proxy_server:$proxy_port"
+    set -gx https_proxy "https://$proxy_server:$proxy_port"
+    set -gx socks_proxy "socks5://$proxy_server:$proxy_port"
+    set -gx all_proxy "socks5://$proxy_server:$proxy_port"
 
     # Set environment variables for applications that may use these variables
-    set -x HTTP_PROXY $http_proxy
-    set -x HTTPS_PROXY $https_proxy
-    set -x SOCKS_PROXY $socks_proxy
-    set -x ALL_PROXY $all_proxy
+    set -gx HTTP_PROXY $http_proxy
+    set -gx HTTPS_PROXY $https_proxy
+    set -gx SOCKS_PROXY $socks_proxy
+    set -gx ALL_PROXY $all_proxy
 
     echo "Proxies set"
     curl "ipinfo.io"
