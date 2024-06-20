@@ -97,7 +97,7 @@ function proxy
     echo "proxy server: $proxy_server"
     # Set proxy
     set -gx http_proxy "http://$proxy_server:$proxy_port"
-    set -gx https_proxy "https://$proxy_server:$proxy_port"
+    set -gx https_proxy "http://$proxy_server:$proxy_port"
     set -gx socks_proxy "socks5://$proxy_server:$proxy_port"
     set -gx all_proxy "socks5://$proxy_server:$proxy_port"
 
