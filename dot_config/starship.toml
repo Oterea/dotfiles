@@ -7,7 +7,6 @@ $time [$username 🍀 Hello! Have a nice day!!!](#BB8FCE) $all$shell $directory 
 add_newline = false
 
 
-
 [cmd_duration]
 min_time = 500
 format = '[ took $duration](#d787af)'
@@ -17,7 +16,6 @@ disabled = false
 style = '#E74C3C'
 symbol = 'sudo'
 format = '[$symbol]($style)'
-
 
 
 [localip]
@@ -142,7 +140,6 @@ ssh_symbol = " "
 format = '[$ssh_symbol](#52BE80)[$hostname](#52BE80)'
 
 
-
 [java]
 symbol = " "
 
@@ -178,7 +175,7 @@ symbol = " "
 
 [os]
 disabled = true
-format = "[$symbol]($style)"
+# format = "[$symbol]($style)"
 style = "#EBEDEF"
 
 

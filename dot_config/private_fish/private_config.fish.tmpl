@@ -90,11 +90,14 @@ function proxy
     else if test (count $argv) -eq 2
         set -g proxy_server $argv[1]
         set -g proxy_port $argv[2]
+    else if test (count $argv) -eq 0
+        set -g proxy_server 127.0.0.1
+        set -g proxy_port 2080
     else
         echo "please provide the proxy server and optionally the proxy port as arguments"
         return 1
     end
-    echo "proxy server: $proxy_server"
+    echo "proxy server: $proxy_server $proxy_port"
     # Set proxy
     set -gx http_proxy "http://$proxy_server:$proxy_port"
     set -gx https_proxy "http://$proxy_server:$proxy_port"
@@ -105,7 +108,7 @@ function proxy
     # set -gx HTTPS_PROXY $https_proxy
     # set -gx ALL_PROXY $all_proxy
 
-    echo "Proxies set"
+    echo "proxy set"
     curl "ipinfo.io"
 end
 
