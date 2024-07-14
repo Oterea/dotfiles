@@ -1,3 +1,5 @@
 [user]
 	name = Oterea
 	email = zhuocli@163.com
+[init]
+	defaultBranch = main
