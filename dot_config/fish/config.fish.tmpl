@@ -1,11 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-{{ if ne .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "darwin" }}
 set -x PATH /opt/homebrew/bin /usr/local/bin $PATH
-{{ end }}
-{{ if ne .chezmoi.os "linux" }}
-.config/app/file.conf
 {{ end }}
 
 # <<<<==machina==>>>>
