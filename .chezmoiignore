@@ -1,9 +1,9 @@
 {{- if eq .chezmoi.os "linux" -}}
 .config/fish/
 .config/alacritty/
-{{ end }}
+{{- end }}
 
 {{- if eq .chezmoi.os "darwin" -}}
 .bashrc
-{{- end -}}
-*.age
+{{- end }}
+key.txt.age
