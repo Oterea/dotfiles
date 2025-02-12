@@ -7,3 +7,4 @@
 .bashrc
 {{- end -}}
 key.txt.age
+.chezmoiignore.tmpl
