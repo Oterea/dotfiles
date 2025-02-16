@@ -25,7 +25,8 @@ disabled = false
 
 
 [fill]
-symbol = '——'
+symbol = '⎯'
+# symbol = '——'
 # symbol = '-'
 style = '#797D7F'
 
