@@ -50,11 +50,12 @@ error_symbol = '[ ](#BF616A)'
 [shell]
 disabled = false
 fish_indicator = '󰈺 '
-bash_indicator = '🅑 '
+bash_indicator = 'ⓑ '
+zsh_indicator = 'ⓩ '
+# zsh_indicator = '𝒁 '
 unknown_indicator = 'mystery shell'
 style = '#F39C12'
 format = '[$indicator]($style)'
-
 
 [time]
 disabled = false
