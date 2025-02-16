@@ -1,2 +1,4 @@
 export PATH=/opt/homebrew/bin:$PATH
+eval "$(starship init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
