@@ -1,6 +1,6 @@
 # <<<<<<<<<<<<<<<<<< linux 下忽略的文件 <<<<<<<<<<<<<<<<<<
 {{- if eq .chezmoi.os "linux" }}
-.config/ghostty/
+.config/fish/
 {{- end }}
 # <<<<<<<<<<<<<<<<<< mac 下忽略的文件 <<<<<<<<<<<<<<<<<
 {{- if eq .chezmoi.os "darwin" }}
