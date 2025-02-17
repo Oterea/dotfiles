@@ -4,4 +4,10 @@ eval "$($HOME/.local/bin/zoxide init --cmd cd bash)"
 # cdi 会自动从 PATH 中找 fzf,不需要单独设置下面的
 # eval "$(fzf --bash)"
 
-
+# 检查 fish 是否存在
+if command -v fish >/dev/null 2>&1; then
+    echo "Fish shell found, starting fish..."
+    exec fish  # 启动 fish shell
+else
+    echo "Fish shell is not installed."
+fi
