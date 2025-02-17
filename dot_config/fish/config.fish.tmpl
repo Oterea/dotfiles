@@ -8,6 +8,11 @@ set -x PATH /opt/homebrew/bin $PATH
 {{ if eq .chezmoi.os "linux" }}
 set -x PATH $HOME/.local/bin $PATH
 {{ end }}
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 # <<<<==git==>>>>
 function gad
     git add $argv
