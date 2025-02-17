@@ -111,14 +111,14 @@ behind = '⇣'
 diverged = '⇕'
 up_to_date = '✔︎'
 
-conflicted = '=><='
-untracked = '✘'
-stashed = '$'
-modified = '⇢'
-staged = '[⎆\($count\)](green)'
-renamed = '»'
-deleted = 'deleted'
-format = '([\[(files:$all_status  )repo:$ahead_behind\]]($style) )'
+conflicted = '⚡︎'
+untracked = '✘ '
+stashed = '$ '
+modified = '⇢ '
+staged = '[⎆ \($count\)](green)'
+renamed = '» '
+deleted = '⎙ '
+format = '([\[(files:$all_status )repo:$ahead_behind\]]($style) )'
 
 
 [golang]
