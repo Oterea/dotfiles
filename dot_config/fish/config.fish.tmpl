@@ -5,6 +5,9 @@ end
 set -x PATH /opt/homebrew/bin $PATH
 {{ end }}
 
+{{ if eq .chezmoi.os "linux" }}
+set -x PATH $HOME/.local/bin $PATH
+{{ end }}
 # <<<<==git==>>>>
 function gad
     git add $argv
