@@ -1,6 +1,6 @@
 [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
 eval "$(starship init bash)"
-eval "$(zoxide init --cmd cd bash)"
+eval "$($HOME/.local/bin/zoxide init --cmd cd bash)"
 # cdi 会自动从 PATH 中找 fzf,不需要单独设置下面的
 # eval "$(fzf --bash)"
 
