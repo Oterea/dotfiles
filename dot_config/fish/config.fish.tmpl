@@ -5,10 +5,6 @@ end
 set -x PATH /opt/homebrew/bin $PATH
 {{ end }}
 
-# <<<<==machina==>>>>
-function h
-    cd ~
-end
 # <<<<==git==>>>>
 function gad
     git add $argv
@@ -45,59 +41,8 @@ function ched
     chezmoi edit $argv
 end
 function chcd
-    chezmoi cd
+    cd $home/.local/share/chezmoi
 end
-# <<<<==proxy-setting==>>>>
-function proxy
-    # Check the number of arguments
-    if test (count $argv) -eq 1
-        set -g proxy_server $argv[1]
-        set -g proxy_port 2080
-    else if test (count $argv) -eq 2
-        set -g proxy_server $argv[1]
-        set -g proxy_port $argv[2]
-    else if test (count $argv) -eq 0
-        set -g proxy_server 127.0.0.1
-        set -g proxy_port 2080
-    else
-        echo "please provide the proxy server and optionally the proxy port as arguments"
-        return 1
-    end
-    echo "proxy server: $proxy_server $proxy_port"
-    # Set proxy
-    set -gx http_proxy "http://$proxy_server:$proxy_port"
-    set -gx https_proxy "http://$proxy_server:$proxy_port"
-    set -gx all_proxy "socks5://$proxy_server:$proxy_port"
-
-    # Set environment variables for applications that may use these variables
-    # set -gx HTTP_PROXY $http_proxy
-    # set -gx HTTPS_PROXY $https_proxy
-    # set -gx ALL_PROXY $all_proxy
-
-    echo "proxy set"
-    curl "ipinfo.io"
-end
-
-function unproxy
-    # Unset HTTP and HTTPS proxy
-    set -e http_proxy
-    set -e https_proxy
-    set -e socks_proxy
-    set -e all_proxy
-
-    # Unset environment variables for applications that may use these variables
-    set -e HTTP_PROXY
-    set -e HTTPS_PROXY
-    set -e SOCKS_PROXY
-    set -e ALL_PROXY
-    echo "Proxies unset"
-    curl "ipinfo.io"
-end
-
-# Example usage:
-# To set the proxies, run: set_proxy <proxy_server> [<proxy_port>]
-# To unset the proxies, run: unset_proxy
-
 # <<<<==starship==>>>>
 starship init fish | source
 # <<<<==zoxide==>>>>
