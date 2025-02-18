@@ -9,4 +9,4 @@ set ignorecase
 set cursorline
 highlight CursorLine cterm=NONE ctermbg=235 guibg=#2ecc71
 highlight CursorLineNr cterm=NONE ctermbg=235 guibg=#2e2e2e
-highlight ModeMsg cterm=NONE ctermbg=cyan guibg=cyan
+highlight ModeMsg cterm=NONE ctermfg=green guibg=cyan
