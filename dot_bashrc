@@ -1,13 +1,21 @@
-[ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
-export PATH=/root/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH
+# [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
+# export PATH=/root/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH
+if [ -f "$HOME/.x-cmd.root/X" ]; then
+  printf "x-cmd is installed\n"
+  . "$HOME/.x-cmd.root/X"   # Boot up x-cmd
+  export PATH=/root/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH  # Modify PATH
+else
+  printf "x-cmd is not installed\n"
+fi
+
 if command -v starship > /dev/null 2>&1; then
-    printf "starship is installed\n"
+    printf "starship init bash\n"
     eval "$(starship init bash)"
 else
     printf "starship is not installed\n"
 fi
 if command -v zoxide > /dev/null 2>&1; then
-    printf "zoxide is installed\n"
+    printf "zoxide init bash\n"
     eval "$($HOME/.local/bin/zoxide init --cmd cd bash)"
 else
     printf "zoxide is not installed\n"
