@@ -61,8 +61,18 @@ function chup
     chezmoi update 
 end
 # <<<<==starship==>>>>
-starship init fish | source
+if command -v starship > /dev/null
+    printf "starship is installed"
+    starship init fish | source
+else
+    echo "starship is not installed"
+end
 # <<<<==zoxide==>>>>
-zoxide init --cmd cd fish | source
+if command -v zoxide > /dev/null
+    printf "zoxide is installed"
+    zoxide init --cmd cd fish | source
+else
+    echo "zoxide is not installed"
+end
 # <<<<==fzf==>>>>
 # fzf --fish | source
