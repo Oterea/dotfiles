@@ -7,8 +7,10 @@ set showcmd
 set ignorecase
 " 突出显示光标所在行
 set cursorline
+" 设置普通行号的颜色
+highlight LineNr ctermfg=104 guifg=cyan
 highlight CursorLine cterm=NONE ctermbg=235 guibg=#2ecc71
-highlight CursorLineNr cterm=NONE ctermbg=235 guibg=#2e2e2e
+highlight CursorLineNr cterm=NONE ctermfg=203 ctermbg=235 guibg=#2e2e2e
 " highlight ModeMsg cterm=NONE ctermfg=green guibg=cyan
 highlight ModeMsg cterm=bold,reverse ctermbg=red ctermfg=white guibg=#ff0000 guifg=#ffffff
-
+highlight Normal ctermfg=116  guifg=white 
