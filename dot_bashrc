@@ -15,9 +15,23 @@ fi
 # eval "$(fzf --bash)"
 
 # 检查 fish 是否存在
+# if command -v fish >/dev/null 2>&1; then
+#     printf "Fish shell found, starting fish..."
+#     exec fish  # 启动 fish shell
+# else
+#     printf "Fish shell is not installed."
+# fi
+# 检查 fish 是否安装
 if command -v fish >/dev/null 2>&1; then
-    printf "Fish shell found, starting fish..."
-    exec fish  # 启动 fish shell
-else
-    printf "Fish shell is not installed."
+  # 提示用户
+  echo "Fish shell is installed. Press Enter to start Fish shell, or any other key to skip."
+
+  # 读取用户输入
+  read -n 1 -s input
+
+  # 如果用户按回车键，则启动 Fish
+  if [ "$input" == "" ]; then
+    exec fish
+  fi
 fi
+
