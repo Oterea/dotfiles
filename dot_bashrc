@@ -3,7 +3,7 @@
 if [ -f "$HOME/.x-cmd.root/X" ]; then
   printf "x-cmd is installed\n"
   . "$HOME/.x-cmd.root/X"   # Boot up x-cmd
-  export PATH=/root/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH  # Modify PATH for chezmoi and fzf and starship
+  export PATH=$HOME/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH  # Modify PATH for chezmoi and fzf and starship
   export PATH=$HOME/.local/bin:$PATH # for zoxide 
 else
   printf "x-cmd is not installed\n"
