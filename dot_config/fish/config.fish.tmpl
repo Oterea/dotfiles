@@ -62,14 +62,14 @@ function cup
 end
 # <<<<==starship==>>>>
 if command -v starship > /dev/null
-    printf "starship is installed\n"
+    printf "starship init fish\n"
     starship init fish | source
 else
     printf "starship is not installed\n"
 end
 # <<<<==zoxide==>>>>
 if command -v zoxide > /dev/null
-    printf "zoxide is installed\n"
+    printf "zoxide init fish\n"
     zoxide init --cmd cd fish | source
 else
     printf "zoxide is not installed\n"
