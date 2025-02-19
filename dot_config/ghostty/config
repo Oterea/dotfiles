@@ -1,14 +1,16 @@
-font-family = "JetBrainsMono Nerd Font Mono"
-font-style = "Bold Italic"
-foreground = "#ec7063"
-background-opacity = "0.9"
+font-family = JetBrainsMono Nerd Font Mono
+font-style = Bold Italic
+foreground = #16a085
+background-opacity = 0.9
 background-blur = true
-
+background = #212f3c
 cursor-style = block
-cursor-color = "#58d68d"
-cursor-text = "#f7f9f9"
-
-command = "/opt/homebrew/bin/fish"
+cursor-color = #58d68d
+cursor-text = #f7f9f9
+selection-background = #d5dbdb
+selection-foreground = #626567
+# theme = carbonfox
+command = /opt/homebrew/bin/fish
 adjust-cursor-thickness = 2
 adjust-cursor-height = 1
 # 设置 false 以确保cursor-style有效
