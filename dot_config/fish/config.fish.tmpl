@@ -15,7 +15,7 @@ alias l='ls -CF'
 
 # <<<<==git==>>>>
 function gad
-    git add $argv
+    git add .
 end
 function gmt
     git commit $argv
@@ -35,6 +35,12 @@ end
 function gam
     git add . && git commit
 end
+function gpl
+    git pull $argv
+end
+function gme
+    git merge $argv
+end
 # <<<<==chezmoi==>>>>
 function ch
     chezmoi $argv
@@ -50,6 +56,9 @@ function ched
 end
 function chcd
     cd $HOME/.local/share/chezmoi
+end
+function chup
+    chezmoi update 
 end
 # <<<<==starship==>>>>
 starship init fish | source
