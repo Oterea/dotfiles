@@ -1,13 +1,23 @@
 [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
-eval "$(starship init bash)"
-eval "$($HOME/.local/bin/zoxide init --cmd cd bash)"
+if command -v starship > /dev/null 2>&1; then
+    printf "starship is installed\n"
+    eval "$(starship init bash)"
+else
+    printf "starship is not installed\n"
+fi
+if command -v zoxide > /dev/null 2>&1; then
+    printf "zoxide is installed\n"
+    eval "$($HOME/.local/bin/zoxide init --cmd cd bash)"
+else
+    printf "zoxide is not installed\n"
+fi
 # cdi 会自动从 PATH 中找 fzf,不需要单独设置下面的
 # eval "$(fzf --bash)"
 
 # 检查 fish 是否存在
 if command -v fish >/dev/null 2>&1; then
-    echo "Fish shell found, starting fish..."
+    printf "Fish shell found, starting fish..."
     exec fish  # 启动 fish shell
 else
-    echo "Fish shell is not installed."
+    printf "Fish shell is not installed."
 fi
