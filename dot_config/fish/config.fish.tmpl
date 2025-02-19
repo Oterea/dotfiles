@@ -62,17 +62,17 @@ function chup
 end
 # <<<<==starship==>>>>
 if command -v starship > /dev/null
-    printf "starship is installed"
+    printf "starship is installed\n"
     starship init fish | source
 else
-    echo "starship is not installed"
+    printf "starship is not installed\n"
 end
 # <<<<==zoxide==>>>>
 if command -v zoxide > /dev/null
-    printf "zoxide is installed"
+    printf "zoxide is installed\n"
     zoxide init --cmd cd fish | source
 else
-    echo "zoxide is not installed"
+    printf "zoxide is not installed\n"
 end
 # <<<<==fzf==>>>>
 # fzf --fish | source
