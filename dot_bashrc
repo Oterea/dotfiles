@@ -1,3 +1,7 @@
+# 禁止输出和交互式操作 防止 sftp, scp rsync 等传输工具的问题
+if [ -z "$SSH_TTY" ]; then
+  return
+fi
 # [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
 # export PATH=/root/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH
 if [ -f "$HOME/.x-cmd.root/X" ]; then
