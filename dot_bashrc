@@ -4,27 +4,30 @@ if [ -z "$SSH_TTY" ]; then
 fi
 
 export PATH=$HOME/.local/bin:$PATH
+
+_ok()   { if [ -t 2 ]; then printf '  \033[32m\xe2\x9c\x93\033[0m %s\n' "$1" >&2; else printf '  \xe2\x9c\x93 %s\n' "$1" >&2; fi; }
+_miss() { if [ -t 2 ]; then printf '  \033[31m\xe2\x9c\x97\033[0m %s\n' "$1" >&2; else printf '  \xe2\x9c\x97 %s\n' "$1" >&2; fi; }
 # [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
 # export PATH=/root/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH
 if [ -f "$HOME/.x-cmd.root/X" ]; then
-  printf "x-cmd is installed\n"
+  _ok x-cmd
   . "$HOME/.x-cmd.root/X"   # Boot up x-cmd
   export PATH=$HOME/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH  # Modify PATH for chezmoi and fzf and starship
 else
-  printf "x-cmd is not installed\n"
+  _miss x-cmd
 fi
 
 if command -v starship > /dev/null 2>&1; then
-    printf "starship init bash\n"
+    _ok starship
     eval "$(starship init bash)"
 else
-    printf "starship is not installed\n"
+    _miss starship
 fi
 if command -v $HOME/.local/bin/zoxide > /dev/null 2>&1; then
-    printf "zoxide init bash\n"
+    _ok zoxide
     eval "$($HOME/.local/bin/zoxide init --cmd cd bash)"
 else
-    printf "zoxide is not installed\n"
+    _miss zoxide
 fi
 # cdi 会自动从 PATH 中找 fzf,不需要单独设置下面的
 # eval "$(fzf --bash)"
