@@ -78,7 +78,12 @@ else
     printf "zoxide is not installed\n"
 end
 # <<<<==fzf==>>>>
-# fzf --fish | source
+if command -v fzf > /dev/null
+    printf "fzf init fish\n"
+    fzf --fish | source
+else
+    printf "fzf is not installed\n"
+end
 
 {{- if eq .chezmoi.os "darwin" }}
 
