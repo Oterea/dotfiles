@@ -1,5 +1,5 @@
 # 非交互式 shell 直接退出。sshd 执行远程命令时也会读这个文件，
-# 而末尾的 exec fish 会顶掉 scp / rsync / sftp 的传输进程。
+# 没必要为一次 scp / rsync 去加载 x-cmd、starship、zoxide。
 # 用 $- 而不是 $SSH_TTY：VNC、云控制台、本机终端同样是交互式的。
 case $- in
   *i*) ;;
@@ -34,8 +34,3 @@ else
 fi
 # cdi 会自动从 PATH 中找 fzf,不需要单独设置下面的
 # eval "$(fzf --bash)"
-
-# 装了 fish 就直接切过去（exec 替换当前进程，退出 fish 即退出登录）
-if command -v fish >/dev/null 2>&1; then
-  exec fish
-fi
