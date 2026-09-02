@@ -1,0 +1,10 @@
+# <<<<<<<<<<<<<<<<<< linux 下忽略的文件 <<<<<<<<<<<<<<<<<<
+{{- if eq .chezmoi.os "linux" }}
+.config/ghostty/
+.zshrc
+{{- end }}
+# <<<<<<<<<<<<<<<<<< mac 下忽略的文件 <<<<<<<<<<<<<<<<<
+{{- if eq .chezmoi.os "darwin" }}
+.bashrc
+.ssh/authorized_keys
+{{- end }}
