@@ -8,3 +8,4 @@
 .bashrc
 .ssh/authorized_keys
 {{- end }}
+SETUP.md
