@@ -8,11 +8,13 @@
 eval "$(curl https://get.x-cmd.com)"
 x boot clear
 x env use chezmoi starship zoxide fzf
-chezmoi init --apply https://gh-proxy.com/https://github.com/Oterea/dotfiles.git
+chezmoi init --apply https://github.com/Oterea/dotfiles.git
 exec bash
 ```
 
-跑完从本机 `ssh root@IP` 就能直连，VNC 不用再开。
+跑完从本机 `ssh 用户@IP` 就能直连，VNC 不用再开。
+
+GitHub 连不上时给仓库地址加代理前缀：`https://ghfast.top/https://github.com/...`
 
 ---
 
@@ -59,7 +61,7 @@ x env ls
 ### 4. 拉配置
 
 ```sh
-chezmoi init --apply https://gh-proxy.com/https://github.com/Oterea/dotfiles.git
+chezmoi init --apply https://github.com/Oterea/dotfiles.git
 ```
 
 一步完成三件事：
@@ -68,7 +70,13 @@ chezmoi init --apply https://gh-proxy.com/https://github.com/Oterea/dotfiles.git
 - 从 `.chezmoi.toml.tmpl` 生成 `~/.config/chezmoi/chezmoi.toml`
 - apply 全部配置，其中包括 **`~/.ssh/authorized_keys`** —— 这是之后能从本机直连的关键
 
-自己的代理跑起来之后可以去掉 `https://gh-proxy.com/` 前缀，直接用 GitHub 地址。
+**先试直连。** 国内云服务器不一定连不上 GitHub —— 实测腾讯云上海节点直连正常。连不上再加代理前缀：
+
+```sh
+chezmoi init --apply https://ghfast.top/https://github.com/Oterea/dotfiles.git
+```
+
+`gh-proxy.com` 不要用于 git 操作，它会返回 `403 Web page content is not allowed. This service is for resource downloads only.` —— 那个域名只允许下载文件，挡 git 协议。
 
 ### 5. 重新加载
 
@@ -82,6 +90,7 @@ exec bash
   ✓ x-cmd
   ✓ starship
   ✓ zoxide
+  ✓ fzf
 ```
 
 红色 ✗ 表示对应工具没装上，回到第 3 步查。
@@ -121,7 +130,7 @@ chezmoi diff        # 看本机和仓库的差异
 chezmoi status      # 有改动的文件（MM = 双向都有差异）
 ```
 
-remote 指向的是带 gh-proxy 的地址，`chezmoi update` 会走代理。改成直连：
+`chezmoi update` 走的是 clone 时用的 remote。事后要换（比如从代理切直连）：
 
 ```sh
 chezmoi cd
