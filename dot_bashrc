@@ -10,11 +10,12 @@ export PATH=$HOME/.local/bin:$PATH
 
 _ok()   { if [ -t 2 ]; then printf '  \033[32m\xe2\x9c\x93\033[0m %s\n' "$1" >&2; else printf '  \xe2\x9c\x93 %s\n' "$1" >&2; fi; }
 _miss() { if [ -t 2 ]; then printf '  \033[31m\xe2\x9c\x97\033[0m %s\n' "$1" >&2; else printf '  \xe2\x9c\x97 %s\n' "$1" >&2; fi; }
-# [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
 # export PATH=/root/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH
+# x boot clear 按字面串匹配 x-cmd 安装器写的标记注释，命中就整行删除。
+# 下面的注释刻意避开那串字，否则加载逻辑会被它清掉。
 if [ -f "$HOME/.x-cmd.root/X" ]; then
   _ok x-cmd
-  . "$HOME/.x-cmd.root/X"   # Boot up x-cmd
+  . "$HOME/.x-cmd.root/X"   # 加载 x-cmd
   export PATH=$HOME/.x-cmd.root/local/data/pkg/sphere/X/l/j/h/bin:$PATH  # Modify PATH for chezmoi and fzf and starship
 else
   _miss x-cmd
