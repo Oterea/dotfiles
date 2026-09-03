@@ -1,3 +1,4 @@
+{{- /* chezmoi:modify-template */ -}}
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -38,18 +39,12 @@ else
     printf "fzf is not installed\n"
 end
 
-{{- if eq .chezmoi.os "darwin" }}
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/homebrew/Caskroom/miniconda/base/bin/conda
-    eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
-else
-    if test -f "/opt/homebrew/Caskroom/miniconda/base/etc/fish/conf.d/conda.fish"
-        . "/opt/homebrew/Caskroom/miniconda/base/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/opt/homebrew/Caskroom/miniconda/base/bin" $PATH
-    end
-end
-# <<< conda initialize <<<
-{{- end }}
+{{/*
+  以下内容不由本仓库管理，从目标文件里原样保留。
+  conda init 会往 config.fish 追加自己的块，那是机器特定的、由 conda 自己维护的，
+  不该进仓库；但 apply 也不能把它冲掉。modify_ 让两者共存。
+  以后有别的工具往这里塞东西，照这个模式再加一段即可。
+*/ -}}
+{{- $conda := regexFind "(?s)# >>> conda initialize >>>.*?# <<< conda initialize <<<" .chezmoi.stdin -}}
+{{- with $conda }}{{ . }}
+{{ end -}}
