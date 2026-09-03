@@ -16,53 +16,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# <<<<==git==>>>>
-function gad
-    git add .
-end
-function gmt
-    git commit $argv
-end
-function gph
-    git push $argv
-end
-function gfh
-    git fetch $argv
-end
-function gss
-    git status $argv
-end
-function glg
-    git log $argv
-end
-function gam
-    git add . && git commit
-end
-function gpl
-    git pull $argv
-end
-function gme
-    git merge $argv
-end
-# <<<<==chezmoi==>>>>
-function ch
-    chezmoi $argv
-end
-function cad
-    chezmoi add $argv
-end
-function cap
-    chezmoi apply
-end
-function ced
-    chezmoi edit $argv
-end
-function ccd
-    cd $HOME/.local/share/chezmoi
-end
-function cup
-    chezmoi update 
-end
 # <<<<==starship==>>>>
 if command -v starship > /dev/null
     printf "starship init fish\n"
