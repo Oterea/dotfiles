@@ -39,12 +39,8 @@ else
     printf "fzf is not installed\n"
 end
 
-{{/*
-  以下内容不由本仓库管理，从目标文件里原样保留。
-  conda init 会往 config.fish 追加自己的块，那是机器特定的、由 conda 自己维护的，
-  不该进仓库；但 apply 也不能把它冲掉。modify_ 让两者共存。
-  以后有别的工具往这里塞东西，照这个模式再加一段即可。
-*/ -}}
-{{- $conda := regexFind "(?s)# >>> conda initialize >>>.*?# <<< conda initialize <<<" .chezmoi.stdin -}}
-{{- with $conda }}{{ . }}
-{{ end -}}
+# 以下内容不由 chezmoi 管理：各工具（conda init 之类）自行追加，apply 时原样保留。
+{{ $marker := "# ==== chezmoi 管理到此为止 ====" -}}
+{{ $marker }}
+{{- $rest := splitList $marker .chezmoi.stdin -}}
+{{- if gt (len $rest) 1 }}{{ index $rest 1 }}{{ end -}}
