@@ -1,6 +1,6 @@
 export PATH=/opt/homebrew/bin:$PATH
-eval "$(starship init zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-
-
 export PATH="$HOME/.local/bin:$PATH"
+
+command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
+command -v zoxide   > /dev/null 2>&1 && eval "$(zoxide init --cmd cd zsh)"
+command -v fzf      > /dev/null 2>&1 && eval "$(fzf --zsh)"
