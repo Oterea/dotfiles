@@ -1,3 +1,4 @@
+{{- /* chezmoi:modify-template */ -}}
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -8,3 +9,9 @@ alias ls='ls -CF'
 command -v starship > /dev/null 2>&1 && eval "$(starship init zsh)"
 command -v zoxide   > /dev/null 2>&1 && eval "$(zoxide init --cmd cd zsh)"
 command -v fzf      > /dev/null 2>&1 && eval "$(fzf --zsh)"
+
+# 以下内容不由 chezmoi 管理：各工具（conda init 之类）自行追加，apply 时原样保留。
+{{ $marker := "# ==== chezmoi 管理到此为止 ====" -}}
+{{ $marker }}
+{{- $rest := splitList $marker .chezmoi.stdin -}}
+{{- if gt (len $rest) 1 }}{{ index $rest 1 }}{{ end -}}
